@@ -11,7 +11,7 @@
     <groupId>org.kosa</groupId>
     <artifactId>KosaProject</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>KosaProject2nd</name>
     <description>KosaProject2nd</description>
     <url/>

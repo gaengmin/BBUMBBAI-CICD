@@ -1,0 +1,78 @@
+spring:
+  profiles:
+    active: local
+    group:
+      local: local, common, secret
+      blue: blue, common, secret
+      green: green, common, secret
+
+server:
+  env: blue
+
+# 로컬 프로파일 설정
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+server:
+  port: 8080
+  serverAddress: localhost
+  time-zone: Asia/Seoul
+
+serverName: local_server
+
+# Blue 프로파일 설정
+---
+spring:
+  config:
+    activate:
+      on-profile: blue
+
+server:
+  port: 8080
+  serverAddress: 43.201.12.96
+  time-zone: Asia/Seoul
+
+serverName: blue_server
+
+# Green 프로파일 설정
+---
+spring:
+  config:
+    activate:
+      on-profile: green
+
+server:
+  port: 8081
+  serverAddress: 43.201.12.96
+
+serverName: green_server
+
+# 공통 설정
+---
+spring:
+  application:
+    name: KosaProject2nd
+
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    root: info
+
+image:
+  upload-dir: /Users/gaeng/Documents/imgs
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
